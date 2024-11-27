@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --nav-height: 5rem;
+  --nav-p: 1.25rem;
+}
+
+.max-w {
+  @apply md:max-w-screen-lg 2xl:max-w-screen-xl;
+}
+
+.nav {
+  padding: var(--nav-p);
+  height: var(--nav-height);
+  @apply mx-auto flex flex-wrap items-center justify-between;
+}
+
+.hero {
+  height: calc(100vh - (var(--nav-height) + var(--nav-p) * 2));
+  @apply flex items-center;
+}
+
+.search-bar {
+  @apply block w-full rounded-md border border-gray-400 p-3 ps-10 
+  text-sm placeholder-gray-400 transition-all
+  hover:border-gray-600 hover:placeholder-gray-600 
+  focus:border-transparent focus:outline-none focus:ring-2;
+}
+
+.btn {
+  @apply inline-block rounded-md border px-4 py-3 text-center transition-all 
+  hover:shadow-md focus:border-transparent focus:outline-none focus:ring-2 active:scale-95;
+}
+
+.tab {
+  @apply btn w-full;
+}
+.tab.active {
+  @apply bg-blue-600 text-white;
+}
