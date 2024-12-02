@@ -5,10 +5,15 @@ export function Tab({ children, to, ...props }: LinkProps) {
   let match = useMatch({ path: resolved.pathname, end: true });
 
   return (
-    <div>
-      <Link to={to} className={`tab ${match ? 'active' : null}`} {...props}>
-        {children}
-      </Link>
-    </div>
+    <Link
+      to={to}
+      role="tab"
+      className={`tab origin-center transition-colors duration-200 ${
+        match ? 'tab-active' : null
+      }`}
+      {...props}
+    >
+      {children}
+    </Link>
   );
 }

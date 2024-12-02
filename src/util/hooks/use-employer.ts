@@ -5,5 +5,5 @@ import type { Employer } from '@/typings';
 export function useEmployer(): Employer | undefined {
   const id = useValidateId(employers.length - 1);
 
-  return employers[id ?? 0];
+  if (id || id === 0) return employers[id];
 }

@@ -1,7 +1,7 @@
-import { EmployerCard } from '@/components/employer/card';
-import { Outlet } from 'react-router-dom';
-import { EmployerTabs } from '@/components/employer/tabs';
 import { useEmployer } from '@/util/hooks/use-employer';
+import { EmployerCard } from '@/components/employer/card';
+import { Tab } from '@/components/tab';
+import { Outlet } from 'react-router-dom';
 
 export function EmployerPage() {
   const employer = useEmployer();
@@ -11,19 +11,21 @@ export function EmployerPage() {
   }
 
   return (
-    <section className="flex w-full flex-col gap-5 sm:flex-row md:gap-10">
-      <div className="sm:max-w-xs">
+    <section className="flex w-full flex-col gap-7 sm:flex-row md:gap-10">
+      <div className="w-full max-w-xs">
         <EmployerCard {...employer} />
       </div>
 
       <div className="w-full">
-        <h2 className="mb-5 text-3xl font-bold text-black md:mb-5">
-          {employer.name}
-        </h2>
+        <h2 className="mb-5 hidden text-4xl sm:block">{employer.name}</h2>
 
-        <EmployerTabs />
+        <nav role="tablist" className="tabs-boxed tabs">
+          <Tab to="">О компании</Tab>
 
-        <hr className="my-5 w-full" />
+          <Tab to="vacancy">Вакансии</Tab>
+        </nav>
+
+        <div className="divider"></div>
 
         {/* Tab routes: About company, Vacancies */}
         <Outlet />

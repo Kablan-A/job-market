@@ -1,4 +1,20 @@
 import * as React from 'react';
+import { Autocomplete } from './autocomplete';
+
+const magnifyingGlass = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 16 16"
+    fill="currentColor"
+    className="h-5 w-5 opacity-70"
+  >
+    <path
+      fillRule="evenodd"
+      d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
 
 export function SearchForm() {
   const [search, setSearch] = React.useState('');
@@ -9,47 +25,21 @@ export function SearchForm() {
   };
 
   return (
-    <form className="flex w-full gap-8">
-      <label
-        htmlFor="default-search"
-        className="sr-only mb-2 text-sm font-medium text-gray-900"
-      >
-        Search
-      </label>
-      <div className="relative w-full">
-        <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
-          <svg
-            className="h-4 w-4 text-gray-400"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 20 20"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-            />
-          </svg>
-        </div>
-        <input
-          type="search"
-          id="default-search"
-          className="search-bar"
-          value={search}
-          onChange={handleChange}
-          placeholder="Профессия, должность или компания"
-          required
-        />
-      </div>
+    <form className="flex w-full gap-5">
+      <Autocomplete
+        inputProps={{
+          type: 'search',
+          placeholder: 'Профессия, должность или компания',
+          startIcon: magnifyingGlass,
+          id: 'default-search',
+          value: search,
+          onChange: handleChange,
+          required: true,
+        }}
+      />
 
-      <div className="hidden md:block">
-        <button
-          type="submit"
-          className="btn bg-blue-600 text-sm font-medium text-white hover:bg-blue-700 focus:ring-blue-800"
-        >
+      <div className="hidden md:inline-block">
+        <button type="submit" className="btn btn-primary">
           Найти
         </button>
       </div>

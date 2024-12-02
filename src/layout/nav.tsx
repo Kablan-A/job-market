@@ -1,54 +1,74 @@
+import * as React from 'react';
 import { paths } from '@/paths';
 import { Link } from 'react-router-dom';
 
-export default function Nav() {
+export const navLinks = [
+  { to: paths.home, txt: 'Home' },
+  { to: paths.vacancies, txt: 'Vacancies' },
+];
+
+export const MobileNav = React.memo(() => {
   return (
-    <nav className="nav max-w">
-      <Link
-        to={paths.home}
-        className="flex items-center space-x-3 rtl:space-x-reverse"
-      >
-        <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
-          Job Market
-        </span>
-      </Link>
-      <button
-        data-collapse-toggle="navbar-default"
-        type="button"
-        className="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-        aria-controls="navbar-default"
-        aria-expanded="false"
-      >
-        <span className="sr-only">Open main menu</span>
+    <div className="dropdown dropdown-end">
+      <div tabIndex={0} role="button" className="btn btn-circle btn-ghost">
         <svg
-          className="h-5 w-5"
-          aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
+          className="h-7 w-7"
           fill="none"
-          viewBox="0 0 17 14"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
         >
           <path
-            stroke="currentColor"
-            strokeWidth={2}
             strokeLinecap="round"
             strokeLinejoin="round"
-            d="M1 1h15M1 7h15M1 13h15"
+            strokeWidth="2"
+            d="M4 6h16M4 12h16M4 18h7"
           />
         </svg>
-      </button>
-      <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-        <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 rtl:space-x-reverse dark:border-gray-700 dark:bg-gray-800 md:dark:bg-gray-900">
-          <li>
-            <Link
-              to={paths.home}
-              className="block rounded bg-blue-700 px-3 py-2 text-white md:bg-transparent md:p-0 md:text-blue-700 dark:text-white md:dark:text-blue-500"
-              aria-current="page"
-            >
-              Home
+      </div>
+      <ul
+        tabIndex={0}
+        className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-200 p-2 shadow"
+      >
+        {navLinks.map((link, index) => (
+          <li key={index}>
+            <Link to={link.to} aria-current="page" className="text-lg">
+              {link.txt}
             </Link>
           </li>
+        ))}
+      </ul>
+    </div>
+  );
+});
+
+export const Nav = React.memo(() => {
+  return (
+    <nav className="max-w navbar mx-auto">
+      <div className="flex-1">
+        <Link to={paths.home} className="btn btn-ghost text-2xl">
+          Jobs
+        </Link>
+      </div>
+      <div className="flex-none md:hidden">
+        <MobileNav />
+      </div>
+
+      <div className="hidden flex-none md:block" id="navbar-default">
+        <ul className="menu menu-horizontal menu-sm">
+          {navLinks.map((link, index) => (
+            <li key={index}>
+              <Link
+                to={link.to}
+                aria-current="page"
+                className="btn btn-ghost text-lg"
+              >
+                {link.txt}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
   );
-}
+});

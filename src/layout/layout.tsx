@@ -1,13 +1,13 @@
-import Nav from './nav';
+import { Nav } from './nav';
 import { Outlet } from 'react-router-dom';
 
 export function Layout() {
   return (
     <>
-      <header className="border-gray-200 bg-white dark:bg-gray-900">
+      <header className="sticky top-0 z-50 bg-base-200">
         <Nav />
       </header>
-      <main className="max-w mx-auto p-5">
+      <main className="max-w main-p mx-auto">
         <Outlet />
       </main>
     </>
