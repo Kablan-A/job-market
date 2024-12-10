@@ -1,10 +1,9 @@
 import * as React from 'react';
-import { paths } from '@/paths';
 import { Link } from 'react-router-dom';
 
 export const navLinks = [
-  { to: paths.home, txt: 'Home' },
-  { to: paths.vacancies, txt: 'Vacancies' },
+  { to: '/search/vacancy', txt: 'Vacancies' },
+  { to: '/search/employer', txt: 'Employers' },
 ];
 
 export const MobileNav = React.memo(() => {
@@ -44,9 +43,9 @@ export const MobileNav = React.memo(() => {
 
 export const Nav = React.memo(() => {
   return (
-    <nav className="max-w navbar mx-auto">
+    <nav className="max-w navbar">
       <div className="flex-1">
-        <Link to={paths.home} className="btn btn-ghost text-2xl">
+        <Link to="/" className="btn btn-ghost text-2xl">
           Jobs
         </Link>
       </div>
@@ -61,7 +60,7 @@ export const Nav = React.memo(() => {
               <Link
                 to={link.to}
                 aria-current="page"
-                className="btn btn-ghost text-lg"
+                className="btn btn-ghost text-lg font-normal"
               >
                 {link.txt}
               </Link>

@@ -8,8 +8,9 @@ export function Tab({ children, to, ...props }: LinkProps) {
     <Link
       to={to}
       role="tab"
-      className={`tab origin-center transition-colors duration-200 ${
-        match ? 'tab-active' : null
+      aria-disabled={match ? 'true' : 'false'}
+      className={`tab transition-colors duration-200 hover:bg-base-300 ${
+        match ? 'tab-active pointer-events-none' : null
       }`}
       {...props}
     >

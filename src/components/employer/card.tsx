@@ -12,7 +12,7 @@ export function EmployerCard({
   vacancies = [],
 }: EmployerCardProps) {
   return (
-    <div className="card bg-base-200 shadow-xl">
+    <div className="card h-full border bg-base-200 shadow-xl">
       <figure>
         <img src={logo} alt={`${name} logo`} className="h-full w-full" />
       </figure>

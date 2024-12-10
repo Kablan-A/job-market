@@ -2,8 +2,8 @@ import type { Vacancy } from '@/typings';
 
 export const vacancies: Vacancy[] = [
   {
-    id: 1,
-    title: 'Software Engineer',
+    id: '1',
+    name: 'Software Engineer',
     description: 'Develop and maintain cutting-edge web applications.',
     location: 'San Francisco, CA, USA',
     employmentType: 'Full-Time',
@@ -14,8 +14,8 @@ export const vacancies: Vacancy[] = [
     employerId: 0,
   },
   {
-    id: 2,
-    title: 'Renewable Energy Specialist',
+    id: '2',
+    name: 'Renewable Energy Specialist',
     description: 'Design and implement sustainable energy solutions.',
     location: 'Berlin, Germany',
     employmentType: 'Full-Time',
@@ -29,8 +29,8 @@ export const vacancies: Vacancy[] = [
     employerId: 1,
   },
   {
-    id: 3,
-    title: 'Financial Analyst',
+    id: '3',
+    name: 'Financial Analyst',
     description: 'Analyze financial data and create detailed reports.',
     location: 'London, UK',
     employmentType: 'Full-Time',
@@ -40,8 +40,8 @@ export const vacancies: Vacancy[] = [
     employerId: 2,
   },
   {
-    id: 4,
-    title: 'Educational Technology Developer',
+    id: '4',
+    name: 'Educational Technology Developer',
     description: 'Build innovative tools for online learning platforms.',
     location: 'Toronto, Canada',
     employmentType: 'Full-Time',
@@ -51,8 +51,8 @@ export const vacancies: Vacancy[] = [
     employerId: 3,
   },
   {
-    id: 5,
-    title: 'Pharmaceutical Sales Representative',
+    id: '5',
+    name: 'Pharmaceutical Sales Representative',
     description: 'Promote and sell pharmaceutical products to clients.',
     location: 'Mumbai, India',
     employmentType: 'Full-Time',
@@ -62,8 +62,8 @@ export const vacancies: Vacancy[] = [
     employerId: 4,
   },
   {
-    id: 6,
-    title: 'AI Robotics Engineer',
+    id: '6',
+    name: 'AI Robotics Engineer',
     description: 'Develop advanced AI systems for robotic applications.',
     location: 'Tokyo, Japan',
     employmentType: 'Full-Time',
@@ -73,8 +73,8 @@ export const vacancies: Vacancy[] = [
     employerId: 5,
   },
   {
-    id: 7,
-    title: 'Aerospace Engineer',
+    id: '7',
+    name: 'Aerospace Engineer',
     description: 'Design and test innovative aerospace technologies.',
     location: 'Toulouse, France',
     employmentType: 'Full-Time',
@@ -84,8 +84,8 @@ export const vacancies: Vacancy[] = [
     employerId: 6,
   },
   {
-    id: 8,
-    title: 'Food Scientist',
+    id: '8',
+    name: 'Food Scientist',
     description: 'Research and develop new food products and technologies.',
     location: 'Rome, Italy',
     employmentType: 'Full-Time',
@@ -95,8 +95,8 @@ export const vacancies: Vacancy[] = [
     employerId: 7,
   },
   {
-    id: 9,
-    title: 'Cybersecurity Specialist',
+    id: '9',
+    name: 'Cybersecurity Specialist',
     description: 'Monitor and defend against cybersecurity threats.',
     location: 'Tel Aviv, Israel',
     employmentType: 'Full-Time',
@@ -110,8 +110,8 @@ export const vacancies: Vacancy[] = [
     employerId: 8,
   },
   {
-    id: 10,
-    title: 'Travel Consultant',
+    id: '10',
+    name: 'Travel Consultant',
     description: 'Plan and manage travel itineraries for clients.',
     location: 'Sydney, Australia',
     employmentType: 'Full-Time',

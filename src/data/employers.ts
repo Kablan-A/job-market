@@ -4,7 +4,7 @@ import type { Employer } from '@/typings';
 
 export const employers: Employer[] = [
   {
-    id: 0,
+    id: '0',
     name: 'TechCorp Solutions',
     country: 'USA',
     industrySectors: ['Software Development', 'IT Services'],
@@ -14,7 +14,7 @@ export const employers: Employer[] = [
     vacancies: [vacancies[0]],
   },
   {
-    id: 1,
+    id: '1',
     name: 'GreenFuture Energy',
     country: 'Germany',
     industrySectors: ['Renewable Energy', 'Sustainability'],
@@ -25,7 +25,7 @@ export const employers: Employer[] = [
     vacancies: [vacancies[1]],
   },
   {
-    id: 2,
+    id: '2',
     name: 'FinServe Global',
     country: 'UK',
     industrySectors: ['Finance', 'Consulting'],
@@ -35,7 +35,7 @@ export const employers: Employer[] = [
     vacancies: [vacancies[2]],
   },
   {
-    id: 3,
+    id: '3',
     name: 'EduTech Innovators',
     country: 'Canada',
     industrySectors: ['Education', 'Technology'],
@@ -44,7 +44,7 @@ export const employers: Employer[] = [
     vacancies: [vacancies[3]],
   },
   {
-    id: 4,
+    id: '4',
     name: 'MedLife Pharmaceuticals',
     country: 'India',
     industrySectors: ['Pharmaceuticals', 'Healthcare'],
@@ -54,7 +54,7 @@ export const employers: Employer[] = [
     vacancies: [vacancies[4]],
   },
   {
-    id: 5,
+    id: '5',
     name: 'NextGen Robotics',
     country: 'Japan',
     industrySectors: ['Robotics', 'AI'],
@@ -63,7 +63,7 @@ export const employers: Employer[] = [
     vacancies: [vacancies[5]],
   },
   {
-    id: 6,
+    id: '6',
     name: 'AeroSpace Dynamics',
     country: 'France',
     industrySectors: ['Aerospace', 'Engineering'],
@@ -73,7 +73,7 @@ export const employers: Employer[] = [
     vacancies: [vacancies[6]],
   },
   {
-    id: 7,
+    id: '7',
     name: 'FoodieTech',
     country: 'Italy',
     industrySectors: ['Food Technology', 'Culinary Arts'],
@@ -83,7 +83,7 @@ export const employers: Employer[] = [
     vacancies: [vacancies[7]],
   },
   {
-    id: 8,
+    id: '8',
     name: 'SecureIT',
     country: 'Israel',
     industrySectors: ['Cybersecurity', 'Software Development'],
@@ -94,7 +94,7 @@ export const employers: Employer[] = [
     vacancies: [vacancies[8]],
   },
   {
-    id: 9,
+    id: '9',
     name: 'Global Travel Network',
     country: 'Australia',
     industrySectors: ['Travel', 'Hospitality'],

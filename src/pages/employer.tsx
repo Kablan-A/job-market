@@ -11,25 +11,27 @@ export function EmployerPage() {
   }
 
   return (
-    <section className="flex w-full flex-col gap-7 sm:flex-row md:gap-10">
-      <div className="w-full max-w-xs">
-        <EmployerCard {...employer} />
-      </div>
+    <div className="max-w">
+      <section className="flex w-full flex-col gap-7 sm:flex-row md:gap-10">
+        <div className="w-full sm:max-w-xs">
+          <EmployerCard {...employer} />
+        </div>
 
-      <div className="w-full">
-        <h2 className="mb-5 hidden text-4xl sm:block">{employer.name}</h2>
+        <div className="w-full">
+          <h2 className="mb-5 hidden text-4xl sm:block">{employer.name}</h2>
 
-        <nav role="tablist" className="tabs-boxed tabs">
-          <Tab to="">О компании</Tab>
+          <nav role="tablist" className="tabs-boxed tabs">
+            <Tab to="">О компании</Tab>
 
-          <Tab to="vacancy">Вакансии</Tab>
-        </nav>
+            <Tab to="vacancy">Вакансии</Tab>
+          </nav>
 
-        <div className="divider"></div>
+          <div className="divider"></div>
 
-        {/* Tab routes: About company, Vacancies */}
-        <Outlet />
-      </div>
-    </section>
+          {/* Tab routes: About company, Vacancies */}
+          <Outlet />
+        </div>
+      </section>
+    </div>
   );
 }

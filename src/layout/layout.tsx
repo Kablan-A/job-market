@@ -7,7 +7,7 @@ export function Layout() {
       <header className="sticky top-0 z-50 bg-base-200">
         <Nav />
       </header>
-      <main className="max-w main-p mx-auto">
+      <main>
         <Outlet />
       </main>
     </>

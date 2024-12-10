@@ -2,21 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: 'Montserrat';
+}
+
 :root {
   --nav-height: 5rem;
   --main-p: 1.25rem;
 }
-
-.max-w {
-  @apply md:max-w-screen-lg 2xl:max-w-screen-xl;
+#root {
+  @apply min-w-96;
 }
 
-.main-p {
+main {
   padding: var(--main-p);
 }
 
+.max-w {
+  @apply mx-auto md:max-w-screen-lg 2xl:max-w-screen-xl;
+}
+
+.page {
+  @apply max-w;
+}
+
+.hero-bg {
+  background-image: url('./assets/hero.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  @apply rounded-xl sm:rounded-2xl;
+}
 .hero {
-  min-height: calc(100vh - 2 * var(--main-p) - 2 * var(--nav-height));
+  min-height: calc(100vh - 2 * var(--main-p) - var(--nav-height));
+  @apply p-5;
 }
 
 /* .input {

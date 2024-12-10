@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { Autocomplete } from './autocomplete';
+import { SearchType } from '@/typings';
+// import { useNavigate } from 'react-router-dom';
 
 const magnifyingGlass = (
   <svg
@@ -16,17 +18,36 @@ const magnifyingGlass = (
   </svg>
 );
 
-export function SearchForm() {
+interface SearchFormProps {
+  searchType: SearchType;
+}
+
+export function SearchForm({ searchType }: SearchFormProps) {
   const [search, setSearch] = React.useState('');
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = event.target;
-    setSearch(value);
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    // navigate(`/search/${searchType ? searchType : 'vacancy'}?search=${search}`);
   };
 
+  // const navigate = useNavigate();
+  const handleChange = React.useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      const { value } = event.target;
+      setSearch(value);
+    },
+    [],
+  );
+
   return (
-    <form className="flex w-full gap-5">
+    <form
+      className="flex w-full gap-5"
+      autoComplete="off"
+      onSubmit={handleSubmit}
+      action={`/search/${searchType ? searchType : 'vacancy'}?search=${search}`}
+    >
       <Autocomplete
+        query={search}
         inputProps={{
           type: 'search',
           placeholder: 'Профессия, должность или компания',
